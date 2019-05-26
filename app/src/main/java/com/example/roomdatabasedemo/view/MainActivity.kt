@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         return NavigationUI.navigateUp(
-            Navigation.findNavController(this,R.id.fragment),
+            Navigation.findNavController(this, R.id.fragment),
             null
         )
     }

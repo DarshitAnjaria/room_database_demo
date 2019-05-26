@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.roomdatabasedemo.R
+import com.example.roomdatabasedemo.database.TaskDatabase
 
 class AddTask : Fragment() {
 
@@ -19,5 +20,10 @@ class AddTask : Fragment() {
         return inflater.inflate(R.layout.fragment_add_task, container, false)
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+//        TaskDatabase(activity!!)
+    }
 
 }
