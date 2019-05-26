@@ -1,9 +1,6 @@
 package com.example.roomdatabasedemo.Database
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
 @Dao
 interface TaskDao {
@@ -19,4 +16,7 @@ interface TaskDao {
 
     @Update
     suspend fun updateTask(task: Task)
+
+    @Delete
+    suspend fun deleteTask(task: Task)
 }

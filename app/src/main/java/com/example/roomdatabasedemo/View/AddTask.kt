@@ -1,10 +1,10 @@
 package com.example.roomdatabasedemo.View
 
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.navigation.Navigation
 
 import com.example.roomdatabasedemo.R
@@ -22,6 +22,8 @@ class AddTask : BaseFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        setHasOptionsMenu(true)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_add_task, container, false)
     }
@@ -84,6 +86,38 @@ class AddTask : BaseFragment() {
                 }
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.delete_task -> if (task != null){
+                deleteNote()
+            }else{
+                context?.snackbar(relative_add_task, "Cannot delete task!", Snackbar.LENGTH_LONG)
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteNote(){
+        AlertDialog.Builder(context).apply {
+            setMessage("Are you sure?")
+            setPositiveButton("YES"){ _, _ ->
+                launch {
+                    TaskDatabase(context).getTaskDao().deleteTask(task!!)
+                    val action = AddTaskDirections.actionSaveTask()
+                    Navigation.findNavController(view!!).navigate(action)
+                }
+            }
+            setNegativeButton("NO"){ _, _ ->
+
+            }
+        }.create().show()
     }
 
 }
