@@ -11,7 +11,7 @@ import androidx.navigation.Navigation
 import com.example.roomdatabasedemo.R
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

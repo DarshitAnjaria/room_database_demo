@@ -8,11 +8,11 @@ import androidx.room.Query
 interface TaskDao {
 
     @Insert
-    fun addTask(task: Task)
+    suspend fun addTask(task: Task)
 
     @Query("SELECT * FROM task")
-    fun getAllTasks(): List<Task>
+    suspend fun getAllTasks(): List<Task>
 
     @Insert
-    fun addMultipleTasks(vararg task: Task)
+    suspend fun addMultipleTasks(vararg task: Task)
 }
