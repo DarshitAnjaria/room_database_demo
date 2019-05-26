@@ -1,4 +1,4 @@
-package com.example.roomdatabasedemo.view
+package com.example.roomdatabasedemo.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -5,7 +5,7 @@
                 android:id="@+id/relative_add_task"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context=".view.AddTask"
+                tools:context=".View.AddTask"
                 android:padding="8dp">
 
     <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"

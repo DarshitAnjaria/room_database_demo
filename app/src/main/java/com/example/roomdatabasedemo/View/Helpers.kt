@@ -1,4 +1,4 @@
-package com.example.roomdatabasedemo.view
+package com.example.roomdatabasedemo.View
 
 import android.content.Context
 import android.view.View

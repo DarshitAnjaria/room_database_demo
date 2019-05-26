@@ -1,8 +1,7 @@
-package com.example.roomdatabasedemo.database
+package com.example.roomdatabasedemo.Database
 
 import android.content.Context
 import androidx.room.Database
-import androidx.room.Entity
 import androidx.room.Room
 import androidx.room.RoomDatabase
 

@@ -1,4 +1,4 @@
-package com.example.roomdatabasedemo.view
+package com.example.roomdatabasedemo.View
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
